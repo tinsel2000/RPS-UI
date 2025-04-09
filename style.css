@@ -19,8 +19,6 @@ h1{
     box-shadow: rgba(0, 0, 0, .2) 15px 28px 25px -18px;
     box-sizing: border-box;
     color: #41403e;
-    cursor: pointer;
-    display: inline-block;
     font-family: "Neucha";
     font-size: 1.75rem;
     line-height: 23px;
@@ -37,7 +35,7 @@ h1{
 
 
 body div {
-    margin: 10px;
+    margin: 5px;
 }
 
 .buttons {
@@ -77,9 +75,9 @@ body div {
   
 .info {
   background-color: aqua;
-  flex-direction: column;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  /* align-items: center;
   /* justify-content: center;
   /* align-content: flex-start;
   /* align-self: center; */
@@ -94,7 +92,7 @@ body div {
   box-shadow: rgba(0, 0, 0, .2) 15px 28px 25px -18px;
   box-sizing: border-box;
   color: #41403e;
-  cursor: pointer;
+  /* cursor: pointer;
   /*display: inline-block; */
   font-family: Neucha, sans-serif;
   font-size: 1rem;
@@ -109,12 +107,15 @@ body div {
   border-top-right-radius: 15px 225px;
 }
 
-.info div {
-  width: 50%;
+.choices2,
+.choices3,
+.scores2,
+.scores3 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
-/* .info div {
-  color: red;
-  border: solid;
-  align-items: flex-end;
+
+#winner {
+  padding: 10px;
 }
-*/

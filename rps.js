@@ -67,22 +67,22 @@ function playRound(humanChoice) {
     webComputerChoice.textContent = computerChoice;
 
     if (humanChoiceLower === computerChoiceLower) {
-        console.log('Draw! Nobody wins')
+        //console.log('Draw! Nobody wins')
     }
     else if (humanChoiceLower === 'rock' && computerChoiceLower != 'paper') {
-        console.log('You win! Rock beats Scissors!')
+        //console.log('You win! Rock beats Scissors!')
         incrementHumanScores()
     }
     else if (humanChoiceLower === 'paper' && computerChoiceLower != 'scissors') {
-        console.log('You win! Rock beats Scissors!')
+        //console.log('You win! Rock beats Scissors!')
         incrementHumanScores()
     }
     else if (humanChoiceLower === 'scissors' && computerChoiceLower != 'rock') {
-        console.log('You win! Rock beats Scissors!')
+        //console.log('You win! Rock beats Scissors!')
         incrementHumanScores()
     }
     else {
-        console.log(`You Lose! ${computerChoice} beats ${humanChoice}.`)
+        //console.log(`You Lose! ${computerChoice} beats ${humanChoice}.`)
         incrementComputerScores()
     };
     if (humanScore >= 5) {
@@ -126,7 +126,7 @@ const scissors = document.querySelector("#scissors");
 
 rock.addEventListener("click", function (e) {
     playRound("Rock");
-    console.log(humanScore, computerScore)
+    //console.log(humanScore, computerScore)
 });
 paper.addEventListener("click", function (e) {
     playRound("Paper");
