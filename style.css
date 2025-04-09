@@ -117,6 +117,13 @@ body div {
   justify-content: center;
 }
 
+.choices2 div,
+.choices3 div,
+.scores2 div,
+.scores3 div {
+  width: 20%;
+}
+
 #winner {
   padding: 10px;
 }
