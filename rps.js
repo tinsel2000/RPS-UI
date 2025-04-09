@@ -12,17 +12,25 @@ function getComputerChoice() {
 };
 
 //Choice handling
-const humanChoice = "None"
-const computerChoice = "None"
+let humanChoice = "None"
+let computerChoice = "None"
 const webHumanChoice = document.getElementById('humanChoice');
 const webComputerChoice = document.getElementById('computerChoice');
 webHumanChoice.textContent = humanChoice;
 webComputerChoice.textContent = computerChoice;
 
+function resetChoices(){
+    humanChoice = "None"
+    computerChoice = "None"
+    webHumanChoice.textContent = humanChoice;
+    webComputerChoice.textContent = computerChoice;
+}
+
 // Scores handling
 let humanScore = 0;
 let computerScore = 0;
 let winner = 0;
+let maxScore = 5;
 
 const webHumanScores = document.getElementById('humanScore');
 const webComputerScores = document.getElementById('computerScore');
@@ -42,24 +50,33 @@ function incrementComputerScores(){
 }
 
 function resetScores(){
+    humanScore = 0;
+    computerScore = 0;
+    winner = 0;
+}
+
+function declareWinner(){
     if (winner === 1) {
         webWinner.textContent = `You are the winner! Your score was ${humanScore}`;
     }
     else if (winner === 2) {
         webWinner.textContent = `You lost. Try again! Your score was ${humanScore}`;
     }
-    humanScore = 0;
-    computerScore = 0;
     webComputerScores.textContent = computerScore;
     webHumanScores.textContent = humanScore;
-    winner = 0;
+    resetScores()
 }
 
+function setMaxScore(number) {
+    maxScore = number;
+}
 
 // Play Round
 // console.log(humanChoice + humanChoiceLower + computerChoice);
 
 function playRound(humanChoice) {
+    webComputerScores.textContent = computerScore;
+    webHumanScores.textContent = humanScore;
     let computerChoice = getComputerChoice();
     let humanChoiceLower = humanChoice.toLowerCase();
     let computerChoiceLower = computerChoice.toLowerCase();
@@ -85,13 +102,13 @@ function playRound(humanChoice) {
         //console.log(`You Lose! ${computerChoice} beats ${humanChoice}.`)
         incrementComputerScores()
     };
-    if (humanScore >= 5) {
+    if (humanScore >= maxScore) {
         winner = 1;
-        resetScores()
+        declareWinner()
     }
-    else if (computerScore >= 5) {
+    else if (computerScore >= maxScore) {
         winner = 2;
-        resetScores()
+        declareWinner()
     }
 };
 
@@ -123,6 +140,7 @@ playGame()
 const rock = document.querySelector("#rock");
 const paper = document.querySelector("#paper");
 const scissors = document.querySelector("#scissors");
+const reset = document.querySelector("#reset");
 
 rock.addEventListener("click", function (e) {
     playRound("Rock");
@@ -133,6 +151,12 @@ paper.addEventListener("click", function (e) {
 });
 scissors.addEventListener("click", function (e) {
     playRound("Scissors");
+});
+reset.addEventListener("click", function (e) {
+    resetScores();
+    resetChoices();
+    webComputerScores.textContent = computerScore;
+    webHumanScores.textContent = humanScore;
 });
 
 /*

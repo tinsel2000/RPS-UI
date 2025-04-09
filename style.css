@@ -23,8 +23,9 @@ h1{
     font-size: 1.75rem;
     line-height: 23px;
     outline: none;
-    padding: 2rem;
+    padding: 1rem;
     text-decoration: none;
+    text-align: center;
     transition: all 235ms ease-in-out;
     border-bottom-left-radius: 15px 255px;
     border-bottom-right-radius: 225px 15px;
@@ -41,12 +42,12 @@ body div {
 .buttons {
     flex: 1;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
 }
 
 .button {
     font-family: "Open Sans", sans-serif;
-    font-size: 16px;
+    font-size: 18px;
     letter-spacing: 2px;
     text-decoration: none;
     text-transform: uppercase;
@@ -118,4 +119,10 @@ body div {
 
 #winner {
   padding: 10px;
+}
+
+#reset {
+  position: relative;
+  bottom: 0px;
+  width: 33%;
 }
