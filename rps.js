@@ -69,11 +69,10 @@ function declareWinner(){
 
 function setMaxScore(number) {
     maxScore = number;
-    console.log(maxScore);
+    (maxScore);
 }
 
 // Play Round
-// console.log(humanChoice + humanChoiceLower + computerChoice);
 
 function playRound(humanChoice) {
     webComputerScores.textContent = computerScore;
@@ -86,22 +85,22 @@ function playRound(humanChoice) {
     webComputerChoice.textContent = computerChoice;
 
     if (humanChoiceLower === computerChoiceLower) {
-        //console.log('Draw! Nobody wins')
+        ('Draw! Nobody wins')
     }
     else if (humanChoiceLower === 'rock' && computerChoiceLower != 'paper') {
-        //console.log('You win! Rock beats Scissors!')
+        ('You win! Rock beats Scissors!')
         incrementHumanScores()
     }
     else if (humanChoiceLower === 'paper' && computerChoiceLower != 'scissors') {
-        //console.log('You win! Rock beats Scissors!')
+        ('You win! Rock beats Scissors!')
         incrementHumanScores()
     }
     else if (humanChoiceLower === 'scissors' && computerChoiceLower != 'rock') {
-        //console.log('You win! Rock beats Scissors!')
+        ('You win! Rock beats Scissors!')
         incrementHumanScores()
     }
     else {
-        //console.log(`You Lose! ${computerChoice} beats ${humanChoice}.`)
+        (`You Lose! ${computerChoice} beats ${humanChoice}.`)
         incrementComputerScores()
     };
     if (humanScore >= maxScore) {
@@ -114,29 +113,6 @@ function playRound(humanChoice) {
     }
 };
 
-// 5 Round Game
-/* function playGame() {
-    for (let i = 0; i<5 ; i++){
-        let humanSelection = getHumanChoice();
-        let computerSelection = getComputerChoice();
-        playRound(humanSelection, computerSelection)
-    }
-    console.log(`Game Over! Your score is: ${humanScore}`)
-    if (humanScore > computerScore) {
-        console.log('Congratulations, you win!');
-    }
-    else if(humanScore < computerScore){
-        console.log('Better luck next time.')
-    }
-    else {
-        console.log('Its a tie!')
-    }
-};
-
-playGame()
-*/
-
-
 // Webpage interactions
 
 const rock = document.querySelector("#rock");
@@ -146,7 +122,7 @@ const reset = document.querySelector("#reset");
 
 rock.addEventListener("click", function (e) {
     playRound("Rock");
-    //console.log(humanScore, computerScore)
+    (humanScore, computerScore)
 });
 paper.addEventListener("click", function (e) {
     playRound("Paper");
