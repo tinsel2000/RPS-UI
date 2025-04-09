@@ -69,6 +69,7 @@ function declareWinner(){
 
 function setMaxScore(number) {
     maxScore = number;
+    console.log(maxScore);
 }
 
 // Play Round
@@ -77,6 +78,7 @@ function setMaxScore(number) {
 function playRound(humanChoice) {
     webComputerScores.textContent = computerScore;
     webHumanScores.textContent = humanScore;
+    webWinner.textContent = 'Make your choice'
     let computerChoice = getComputerChoice();
     let humanChoiceLower = humanChoice.toLowerCase();
     let computerChoiceLower = computerChoice.toLowerCase();
@@ -157,14 +159,35 @@ reset.addEventListener("click", function (e) {
     resetChoices();
     webComputerScores.textContent = computerScore;
     webHumanScores.textContent = humanScore;
+    webWinner.textContent = 'Make your choice'
 });
 
-/*
-const info = document.querySelector("#info");
+// Switch modes
+let mode;
+function switchMode(mode) {
+    switch(mode){
+        case 3:
+            setMaxScore(3);
+            break;
+        case 5:
+            setMaxScore(5);
+            break;
+        case 10:
+            setMaxScore(10);
+            break;
+    }
+};
 
-const scores = document.createElement('scores');
-scores.classList.add("scores");
-scores.textContent = "Current Scores: Humans: " + humanScore + " | Computers: " + computerScore;
+const setMax3 = document.querySelector("#setMaxScore3");
+const setMax5 = document.querySelector("#setMaxScore5");
+const setMax10 = document.querySelector("#setMaxScore10");
 
-info.appendChild(scores);
-*/
+setMax3.addEventListener("click", function (e) {
+    switchMode(3);
+});
+setMax5.addEventListener("click", function (e) {
+    switchMode(5);
+});
+setMax10.addEventListener("click", function (e) {
+    switchMode(10);
+});
